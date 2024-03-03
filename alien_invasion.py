@@ -35,6 +35,7 @@ class AlienInvasion:
             self._check_events()
             self.ship.update()
             self._update_bullets()
+            self._update_aliens()
             self._update_screen()
 
     def _create_fleet(self):
@@ -69,7 +70,7 @@ class AlienInvasion:
          # Make an alien.
          #alien = Alien(self)
          self.aliens.add(alien)
-            
+         
     def _update_bullets(self):
           """Update position of bullets and get rid of old bullets."""
           # Update bullet positions.
@@ -81,7 +82,9 @@ class AlienInvasion:
                         self.bullets.remove(bullet)
           print(len(self.bullets))
             
-            
+    def _update_aliens(self):
+         """Update the positions of all aliens in the fleet."""
+         self.aliens.update()   
 
                      
     def _check_events(self):
